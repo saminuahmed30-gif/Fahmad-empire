@@ -1,0 +1,4 @@
+UPLOAD THIS FILE AS index.html
+
+For the easiest deployment on a simple static host, upload fahmad_empire_fully_connected.html and rename it to index.html.
+This version contains the CSS and application code inside the same HTML file, so the design will not disappear because separate styles.css/app.js files were not uploaded.

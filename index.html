@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Fahmad Empire — premium fashion and lifestyle store">
+<title>Fahmad Empire — Store Fahmad Empire — Store & Admin Admin (Connected)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#c6a22a;--gold2:#e3c968;--ink:#151515;--cream:#f7f3eb;--paper:#fff;--muted:#747474;--line:#e8e3d9;--green:#2d7b54;--red:#b44d45;--shadow:0 20px 70px rgba(20,20,20,.10);--radius:20px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",sans-serif}a{text-decoration:none;color:inherit}button,input,select,textarea{font:inherit}button{cursor:pointer}.wrap{width:min(1180px,92%);margin:auto}.topbar{height:78px;position:sticky;top:0;z-index:40;background:rgba(255,255,255,.95);backdrop-filter:blur(14px);border-bottom:1px solid #eee}.topbar-inner{height:100%;display:flex;align-items:center;gap:30px}.brand{display:flex;align-items:center;gap:9px;font:700 21px "Playfair Display";white-space:nowrap}.brand>span,.admin-logo>span{display:grid;place-items:center;width:37px;height:37px;border:1px solid var(--gold);border-radius:50%;color:var(--gold)}.brand small{display:block;font:700 7px "DM Sans";letter-spacing:3px;margin-top:-6px}.topbar nav{display:flex;gap:21px;margin-left:auto;font-size:12px;font-weight:600}.topbar nav a:hover{color:var(--gold)}.actions{display:flex;gap:3px}.circle{width:39px;height:39px;border:0;background:transparent;border-radius:50%;position:relative}.circle:hover{background:var(--cream)}.circle i{position:absolute;right:0;top:0;min-width:15px;height:15px;background:var(--gold);color:white;border-radius:50%;font:700 9px "DM Sans";display:grid;place-items:center}.mobile-menu{display:none;border:0;background:none;font-size:21px}
+.hero{background:linear-gradient(115deg,#faf7f0,#fff);padding:65px 0 85px}.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:75px;align-items:center}.kicker{font-size:10px;letter-spacing:2.6px;font-weight:700;color:#987716}.hero h1{font:600 clamp(47px,5.7vw,76px)/1.02 "Playfair Display";margin:14px 0 24px;max-width:650px}.hero h1 em{font-style:normal;color:var(--gold)}.hero p{font-size:16px;color:#666;max-width:560px}.hero-cta{display:flex;gap:10px;margin:29px 0}.btn{border:1px solid transparent;border-radius:999px;padding:13px 23px;font-size:12px;font-weight:700;display:inline-flex;justify-content:center;align-items:center;transition:.2s}.btn:hover{transform:translateY(-2px)}.btn.gold{background:var(--gold);color:#fff}.btn.ghost{border-color:#222}.btn.light{background:#fff;color:#151515}.hero-trust{display:flex;gap:18px;flex-wrap:wrap;font-size:10px;color:#777}.hero-visual{position:relative}.hero-visual>img{width:100%;height:590px;object-fit:cover;border-radius:30px 30px 30px 4px;box-shadow:var(--shadow)}.floating-card{position:absolute;left:-25px;bottom:25px;background:#fff;padding:17px 20px;border-radius:15px;box-shadow:var(--shadow)}.floating-card b{display:block;font:600 16px "Playfair Display"}.floating-card span{font-size:10px;color:#777}
+.section{padding:90px 0}.cream{background:var(--cream)}.section-title{display:flex;justify-content:space-between;align-items:end;margin-bottom:30px}.section-title h2,.editorial h2,.newsletter h2{font:600 38px "Playfair Display";margin:6px 0 0}.section-title>a{font-size:12px;font-weight:700;border-bottom:1px solid var(--gold);padding-bottom:4px}.muted{font-size:11px;color:#888}
+.categories{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}.cat{height:215px;overflow:hidden;border-radius:20px;position:relative}.cat img{width:100%;height:100%;object-fit:cover;transition:.4s}.cat:hover img{transform:scale(1.06)}.cat:after{content:"";position:absolute;inset:40% 0 0;background:linear-gradient(transparent,rgba(0,0,0,.75))}.cat strong{position:absolute;z-index:2;bottom:16px;left:16px;color:#fff;font-size:13px}
+.toolbar{display:grid;grid-template-columns:1fr 190px 190px;gap:10px;margin-bottom:25px}.search{border:1px solid var(--line);border-radius:12px;padding:0 13px;display:flex;align-items:center}.search input{width:100%;border:0;outline:0;padding:13px;background:none}.toolbar select{border:1px solid var(--line);border-radius:12px;padding:0 12px;background:#fff;outline:0}.products{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}.product{min-width:0}.product-pic{height:325px;position:relative;overflow:hidden;border-radius:19px;background:#eee}.product-pic img{width:100%;height:100%;object-fit:cover;transition:.4s}.product:hover .product-pic img{transform:scale(1.04)}.badge{position:absolute;left:12px;top:12px;background:#151515;color:#fff;padding:5px 9px;border-radius:99px;font-size:8px;font-weight:700;letter-spacing:.6px}.badge.gold{background:var(--gold)}.p-actions{position:absolute;right:11px;top:11px;display:flex;flex-direction:column;gap:6px}.p-actions button{width:35px;height:35px;border:0;border-radius:50%;background:#fff;box-shadow:0 5px 20px #0001}.product-info{padding:12px 2px}.product-info h3{font-size:14px;margin:0 0 4px}.rating{font-size:10px;color:#9a7600}.price{font-size:14px;font-weight:800;margin-top:5px}.old{text-decoration:line-through;color:#aaa;font-weight:400;margin-left:4px}.stock{font-size:10px;color:#ad7700;margin-top:3px}.add{width:100%;border:1px solid #222;background:#fff;border-radius:10px;padding:10px;font-weight:700;font-size:11px;margin-top:9px}.add:hover{background:#151515;color:#fff}
+.editorial{background:#161616;color:#fff;padding:85px 0}.editorial-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}.editorial img{width:100%;height:480px;object-fit:cover;border-radius:24px}.editorial h2{font-size:48px}.editorial p{color:#aaa;max-width:520px;margin:20px 0 28px}.reviews{background:#fff}.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.review-grid article{border:1px solid var(--line);border-radius:18px;padding:25px}.stars{color:var(--gold);letter-spacing:2px}.review-grid p{color:#555;min-height:72px}.review-grid small{display:block;color:#888;margin-top:3px}.newsletter{background:var(--cream);padding:65px 0}.newsletter-inner{display:flex;justify-content:space-between;align-items:center;gap:35px}.newsletter p{color:#666}.newsletter form{display:flex;gap:8px;min-width:430px}.newsletter input{flex:1;border:1px solid #ddd;border-radius:999px;padding:13px 17px;outline:0}footer{background:#111;color:#ddd;padding:65px 0 20px}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1.2fr 1.5fr;gap:40px}.footer-grid h4{color:#fff}.footer-grid>a,.footer-grid p{display:block;color:#999;font-size:11px;margin:8px 0}.footer-brand{color:#fff}.footer-bottom{border-top:1px solid #292929;margin-top:45px;padding-top:18px;font-size:10px;color:#777;display:flex;justify-content:space-between}
+
+.overlay{display:none;position:fixed;inset:0;background:#0007;z-index:60}.overlay.show{display:block}.drawer{position:fixed;right:-490px;top:0;height:100vh;width:min(470px,94vw);background:#fff;z-index:61;padding:22px;overflow:auto;transition:.3s}.drawer.open{right:0}.drawer-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:13px}.drawer-head h3{font:600 25px "Playfair Display"}.cart-row{display:grid;grid-template-columns:70px 1fr auto;gap:12px;padding:15px 0;border-bottom:1px solid var(--line)}.cart-row img{width:70px;height:80px;object-fit:cover;border-radius:9px}.qty{display:flex;align-items:center;gap:8px;margin-top:7px}.qty button{width:24px;height:24px;border:1px solid var(--line);background:#fff;border-radius:5px}.drawer-total{padding-top:17px}.line{display:flex;justify-content:space-between;margin:9px 0;font-size:13px}.line.final{border-top:1px solid var(--line);padding-top:15px;font-size:18px;font-weight:800}.full{width:100%;margin-top:12px}.empty{text-align:center;padding:70px 15px;color:#777}.modal-wrap{display:none;position:fixed;inset:0;background:#0007;z-index:80;align-items:center;justify-content:center}.modal-wrap.show{display:flex}.modal{background:#fff;width:min(860px,94vw);max-height:90vh;overflow:auto;border-radius:24px;padding:28px;position:relative}.close-modal{position:absolute;right:13px;top:13px}.product-modal{display:grid;grid-template-columns:1fr 1fr;gap:30px}.product-modal img{width:100%;height:450px;object-fit:cover;border-radius:18px}.product-modal h2{font:600 38px/1.05 "Playfair Display"}.options{display:flex;gap:7px;flex-wrap:wrap;margin:9px 0 20px}.option{border:1px solid var(--line);background:#fff;padding:8px 12px;border-radius:8px}.option.active{border-color:var(--gold);background:#faf3d8}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{display:flex;flex-direction:column;gap:6px;margin:8px 0}.field label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px}.field input,.field select,.field textarea{border:1px solid var(--line);border-radius:10px;padding:11px;outline:0}.field textarea{min-height:90px;resize:vertical}.form-full{grid-column:1/-1}.toast{position:fixed;z-index:100;bottom:25px;left:50%;transform:translate(-50%,20px);opacity:0;background:#151515;color:#fff;border-radius:999px;padding:11px 18px;font-size:11px;transition:.2s}.toast.show{opacity:1;transform:translate(-50%,0)}
+
+.hidden{display:none!important}.admin-layout{min-height:100vh;background:#f7f6f2;display:grid;grid-template-columns:235px 1fr}.admin-side{background:#151515;color:#fff;padding:25px 16px;display:flex;flex-direction:column}.admin-logo{font:700 21px "Playfair Display";display:flex;align-items:center;gap:9px;padding:0 10px 35px}.admin-logo small{display:block;font:700 7px "DM Sans";letter-spacing:2px;color:#aaa;margin-left:-35px;margin-top:28px}.admin-menu{display:grid;gap:4px}.admin-menu button{border:0;background:transparent;color:#aaa;text-align:left;padding:13px;border-radius:10px;font-size:12px}.admin-menu button:hover,.admin-menu button.active{background:#292929;color:#fff}.back-store{margin-top:auto;background:#242424;color:#fff;border:0;border-radius:10px;padding:12px}.admin-main{padding:30px 35px;min-width:0}.admin-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}.admin-head h1{font:600 38px "Playfair Display";margin:4px 0}.admin-profile{border:1px solid var(--line);background:#fff;border-radius:99px;padding:9px 14px}.admin-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.admin-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:19px}.admin-card .label{font-size:10px;color:#888}.admin-card strong{font-size:25px;display:block;margin-top:6px}.admin-card em{font-size:10px;color:var(--green);font-style:normal}.admin-panel{background:#fff;border:1px solid var(--line);border-radius:17px;padding:20px;margin-top:17px}.admin-panel-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}.admin-panel h3{font:600 22px "Playfair Display";margin:0}.primary{border:0;background:var(--gold);color:#fff;border-radius:9px;padding:10px 15px;font-weight:700;font-size:11px}.table-wrap{overflow:auto}.admin-table{width:100%;border-collapse:collapse;font-size:11px}.admin-table th,.admin-table td{text-align:left;padding:12px;border-bottom:1px solid var(--line);white-space:nowrap}.admin-table th{color:#888;font-size:9px;text-transform:uppercase;letter-spacing:1px}.thumb{width:42px;height:42px;border-radius:7px;object-fit:cover;vertical-align:middle;margin-right:8px}.status{padding:4px 8px;border-radius:99px;background:#e8f5ee;color:var(--green);font-size:9px}.status.warn{background:#fff4dc;color:#a87500}.admin-actions button{border:0;background:var(--cream);border-radius:7px;padding:6px 8px;font-size:10px;margin-right:3px}.admin-empty{text-align:center;padding:45px;color:#888}.product-editor{display:grid;grid-template-columns:1.1fr .9fr;gap:22px}.upload-box{border:2px dashed #d9d2c4;border-radius:15px;padding:25px;text-align:center;background:#fcfbf8}.preview-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:10px}.preview-grid img{width:100%;height:90px;object-fit:cover;border-radius:7px}.checkboxes{display:flex;gap:15px;flex-wrap:wrap;margin:10px 0}.checkboxes label{font-size:11px}.mini-chart{height:190px;display:flex;align-items:end;gap:10px;padding:15px 5px 0}.bar{flex:1;background:linear-gradient(var(--gold2),var(--gold));border-radius:6px 6px 2px 2px;min-height:18px}.chart-labels{display:flex;justify-content:space-around;font-size:9px;color:#888}.cat-admin{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.cat-admin article{border:1px solid var(--line);border-radius:13px;padding:12px}.cat-admin img{width:100%;height:120px;object-fit:cover;border-radius:9px}.setting-row{display:flex;justify-content:space-between;padding:15px 0;border-bottom:1px solid var(--line);font-size:12px}
+@media(max-width:900px){.topbar nav{display:none}.mobile-menu{display:block}.hero-inner,.editorial-grid,.product-modal{grid-template-columns:1fr}.hero-visual>img{height:470px}.categories{grid-template-columns:repeat(3,1fr)}.products{grid-template-columns:repeat(2,1fr)}.review-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}.newsletter-inner{display:block}.newsletter form{margin-top:20px;min-width:0}.admin-layout{grid-template-columns:1fr}.admin-side{position:sticky;top:0;z-index:20;padding:10px;flex-direction:row;align-items:center;gap:10px}.admin-logo{padding:0;font-size:16px}.admin-menu{display:flex;overflow:auto}.admin-menu button{white-space:nowrap}.back-store{margin:0 0 0 auto;white-space:nowrap}.admin-main{padding:22px 15px}.admin-cards{grid-template-columns:repeat(2,1fr)}.product-editor{grid-template-columns:1fr}}
+@media(max-width:560px){.topbar{height:66px}.brand{font-size:18px}.brand>span{width:30px;height:30px}.actions .circle{width:33px}.hero{padding:42px 0 55px}.hero h1{font-size:49px}.hero-cta{flex-wrap:wrap}.hero-visual>img{height:420px}.floating-card{left:10px}.section{padding:60px 0}.section-title h2{font-size:30px}.categories{grid-template-columns:repeat(2,1fr)}.cat{height:175px}.toolbar{grid-template-columns:1fr}.products{gap:14px}.product-pic{height:230px}.product-info h3{font-size:12px}.footer-grid{grid-template-columns:1fr}.newsletter form{display:block}.newsletter form button{width:100%;margin-top:8px}.form-grid{grid-template-columns:1fr}.form-full{grid-column:auto}.admin-cards{grid-template-columns:1fr 1fr}.admin-head h1{font-size:30px}.admin-profile{display:none}.cat-admin{grid-template-columns:1fr 1fr}}
+
+</style>
+<style>.admin-login-link{font-weight:700!important;color:#9a7600!important}.mobile-menu{display:none}.mobile-admin-btn{display:none}.whatsapp-float{position:fixed;right:14px;bottom:20px;z-index:60;background:#25D366;color:#fff;border-radius:999px;padding:11px 15px;font-size:12px;font-weight:800;box-shadow:0 8px 25px rgba(0,0,0,.18)}.whatsapp-float:hover{transform:translateY(-2px)}@media(max-width:900px){.mobile-admin-btn{display:block!important;position:fixed;right:14px;bottom:82px;z-index:60;background:var(--gold);color:#fff;border:0;border-radius:999px;padding:12px 16px;font-weight:800;box-shadow:0 8px 25px rgba(0,0,0,.18)}#siteNav{display:none!important}#siteNav.mobile-open{display:flex!important;position:absolute;top:66px;left:0;right:0;padding:20px;background:#fff;flex-direction:column;box-shadow:0 12px 30px rgba(0,0,0,.12);z-index:50}.mobile-menu{display:block}}</style></head>
+<body>
+<div id="toast"></div>
+
+<div id="storeView">
+<a class="whatsapp-float" href="https://wa.me/2348065926595?text=Hello%20Fahmad%20Empire%2C%20I%27d%20like%20to%20make%20an%20inquiry." target="_blank" rel="noopener" aria-label="Chat with Fahmad Empire on WhatsApp">💬 WhatsApp</a>
+<button class="mobile-admin-btn" onclick="showAdmin()">👑 Admin Login</button>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <button class="mobile-menu" id="mobileMenu">☰</button>
+    <a href="#home" class="brand"><span>F</span><div>Fahmad<small>EMPIRE</small></div></a>
+    <nav id="siteNav">
+      <a href="#home">Home</a><a href="#shop">Shop</a><a href="#categories">Categories</a><a href="#new">New Arrivals</a><a href="#best">Best Sellers</a><a href="#about">About</a><a href="#contact">Contact</a><a href="#" class="admin-login-link" onclick="showAdmin();closeMobileNav();return false;">👑 Admin Login</a>
+    </nav>
+    <div class="actions">
+      <button class="circle" onclick="focusSearch()">⌕</button>
+      <button class="circle" onclick="openWishlist()">♡<i id="wishCount">0</i></button>
+      <button class="circle" onclick="openCart()">🛍<i id="cartCount">0</i></button>
+      <button class="circle" onclick="openAccount()">◯</button>
+    </div>
+  </div>
+</header>
+
+<section id="home" class="hero">
+ <div class="wrap hero-inner">
+  <div class="hero-copy">
+   <div class="kicker">FAHMAD EMPIRE • NIGERIA</div>
+   <h1>Where everyday style meets <em>quiet luxury.</em></h1>
+   <p>Curated fashion and lifestyle pieces for the woman who loves elegance, quality and effortless confidence.</p>
+   <div class="hero-cta"><a class="btn gold" href="#shop">Shop collection</a><a class="btn ghost" href="#new">Explore new arrivals</a></div>
+   <div class="hero-trust"><span>✓ Carefully curated</span><span>✓ Secure checkout</span><span>✓ Delivery across Nigeria</span></div>
+  </div>
+  <div class="hero-visual">
+    <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1100&q=88" alt="Premium handbag">
+    <div class="floating-card"><b>New collection</b><span>Pieces made to be noticed.</span></div>
+  </div>
+ </div>
+</section>
+
+<section id="categories" class="section">
+ <div class="wrap">
+  <div class="section-title"><div><span class="kicker">EXPLORE</span><h2>Shop by category</h2></div><a href="#shop">View all →</a></div>
+  <div class="categories" id="categoryGrid"></div>
+ </div>
+</section>
+
+<section id="shop" class="section shop">
+ <div class="wrap">
+  <div class="section-title"><div><span class="kicker">THE COLLECTION</span><h2>Find your next favourite</h2></div><span class="muted" id="resultCount"></span></div>
+  <div class="toolbar">
+   <label class="search"><span>⌕</span><input id="search" placeholder="Search bags, shoes, abayas..."></label>
+   <select id="catFilter"><option value="">All categories</option></select>
+   <select id="sort"><option value="new">Newest</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option><option value="popular">Best sellers</option><option value="rating">Best rated</option></select>
+  </div>
+  <div class="products" id="productGrid"></div>
+ </div>
+</section>
+
+<section id="new" class="section cream">
+ <div class="wrap"><div class="section-title"><div><span class="kicker">JUST IN</span><h2>New arrivals</h2></div><a href="#shop">Shop all →</a></div><div class="products" id="newGrid"></div></div>
+</section>
+
+<section id="best" class="section">
+ <div class="wrap"><div class="section-title"><div><span class="kicker">CUSTOMER FAVOURITES</span><h2>Best sellers</h2></div></div><div class="products" id="bestGrid"></div></div>
+</section>
+
+<section class="editorial">
+ <div class="wrap editorial-grid"><img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1000&q=85" alt="Fahmad shopping"><div><span class="kicker">THE FAHMAD STANDARD</span><h2>Beautiful things. Thoughtfully chosen.</h2><p>We believe shopping should feel personal. Every piece is selected with modern Nigerian women in mind — from everyday essentials to statement pieces.</p><a href="#shop" class="btn light">Discover the collection</a></div></div>
+</section>
+
+<section class="section reviews">
+ <div class="wrap"><div class="section-title"><div><span class="kicker">CUSTOMER LOVE</span><h2>Real words from our customers</h2></div></div>
+ <div class="review-grid"><article><div class="stars">★★★★★</div><p>“The bag is even more beautiful in person. The packaging was so neat.”</p><b>Aisha M.</b><small>Zaria, Kaduna</small></article><article><div class="stars">★★★★★</div><p>“Very smooth ordering experience and excellent customer service.”</p><b>Maryam A.</b><small>Abuja, FCT</small></article><article><div class="stars">★★★★★</div><p>“I love the quality. Fahmad has become one of my favourite stores.”</p><b>Hauwa S.</b><small>Kano</small></article></div></div>
+</section>
+
+<section class="newsletter"><div class="wrap newsletter-inner"><div><span class="kicker">JOIN THE LIST</span><h2>First access to new drops.</h2><p>New arrivals, private offers and style updates.</p></div><form id="newsletter"><input type="email" required placeholder="Your email address"><button class="btn gold">Subscribe</button></form></div></section>
+
+<footer id="contact">
+ <div class="wrap footer-grid"><div><a class="brand footer-brand" href="#home"><span>F</span><div>Fahmad<small>EMPIRE</small></div></a><p>Premium fashion and lifestyle, thoughtfully curated in Nigeria.</p></div><div><h4>Shop</h4><a href="#shop">All products</a><a href="#new">New arrivals</a><a href="#best">Best sellers</a></div><div><h4>Customer care</h4><a href="#">Shipping policy</a><a href="#">Returns & refunds</a><a href="#">Terms</a><a href="#">Privacy</a></div><div><h4>Contact</h4><p>WhatsApp: +234 806 592 6595</p><p>hello@fahmadempire.com</p><p>Zaria, Kaduna, Nigeria</p></div></div>
+ <div class="wrap footer-bottom">© 2026 Fahmad Empire <span>₦ Nigerian Naira • Secure shopping</span></div>
+</footer>
+</div>
+
+<div id="adminView" class="hidden">
+ <div class="admin-layout">
+  <aside class="admin-side">
+   <a class="admin-logo" href="#"><span>F</span> Fahmad <small>ADMIN</small></a>
+   <div class="admin-menu">
+    <button class="active" data-tab="overview">▦ Dashboard</button>
+    <button data-tab="products">◇ Products</button>
+    <button data-tab="orders">□ Orders</button>
+    <button data-tab="customers">♙ Customers</button>
+    <button data-tab="categories">◈ Categories</button>
+    <button data-tab="promotions">✦ Promotions</button>
+    <button data-tab="reviews">★ Reviews</button>
+    <button data-tab="settings">⚙ Settings</button>
+   </div>
+   <button class="back-store" onclick="showStore()">← Back to store</button>
+  </aside>
+  <main class="admin-main">
+   <header class="admin-head"><div><span class="kicker">FAHMAD EMPIRE</span><h1 id="adminTitle">Dashboard</h1></div><button class="admin-profile">Admin ▾</button></header>
+   <div id="adminContent"></div>
+  </main>
+ </div>
+</div>
+
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer"><div class="drawer-head"><h3 id="drawerTitle"></h3><button class="circle" onclick="closeDrawer()">×</button></div><div id="drawerBody"></div></aside>
+<div class="modal-wrap" id="modalWrap"><div class="modal" id="modal"></div></div>
+
+<script>window.FAHMAD_SUPABASE = {
+  url: "https://suufewlslzwddzkljzey.supabase.co",
+  anonKey: "sb_publishable_kqnY6idmB06xVml2pFfh2g_1rkxYPwQ"
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const SB_URL = window.FAHMAD_SUPABASE?.url || "";
+const SB_KEY = window.FAHMAD_SUPABASE?.anonKey || "";
+const sb = (SB_URL && SB_KEY && window.supabase) ? window.supabase.createClient(SB_URL, SB_KEY) : null;
+let backendOnline = false;
+let currentUser = null;
+
+function slugify(v){return String(v||"").toLowerCase().trim().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"") || "product"}
+function dbProductToUi(p, imgs=[]){
+  const imageRows=imgs.filter(x=>x.product_id===p.id).sort((a,b)=>a.sort_order-b.sort_order);
+  return {id:p.id,name:p.name,category:p.categories?.name||"Uncategorized",category_id:p.category_id,price:Number(p.price||0),compare:Number(p.compare_at_price||0),stock:Number(p.stock_quantity||0),rating:Number(p.rating||0),sales:0,badge:p.is_best_seller?"BEST SELLER":p.is_new_arrival?"NEW":p.compare_at_price?"SALE":"",colors:(p.specifications?.colors)||[],sizes:(p.specifications?.sizes)||[],description:p.description||"",images:imageRows.length?imageRows.map(x=>x.image_url):["https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=900&q=85"]}
+}
+async function loadBackend(){
+  if(!sb) return false;
+  try{
+    const {data: cats, error: ce}=await sb.from('categories').select('*').eq('is_active',true).order('sort_order');
+    if(ce) throw ce;
+    const {data: ps, error: pe}=await sb.from('products').select('*, categories(name)').eq('is_active',true).order('created_at',{ascending:false});
+    if(pe) throw pe;
+    const ids=(ps||[]).map(x=>x.id);
+    let imgs=[];
+    if(ids.length){ const {data: ir, error: ie}=await sb.from('product_images').select('*').in('product_id',ids); if(ie) throw ie; imgs=ir||[]; }
+    if((ps||[]).length) products=ps.map(x=>dbProductToUi(x,imgs));
+    if((cats||[]).length) categories=cats.map(c=>({id:c.id,name:c.name,image:c.image_url||catImages[c.name]||catImages.Handbags,active:c.is_active}));
+    backendOnline=true;
+    return true;
+  }catch(err){ console.warn('Supabase load failed; using local demo data.',err); backendOnline=false; return false; }
+}
+async function refreshFromBackend(){ if(await loadBackend()) { saveLocalOnly(); renderStore(); if(!$('#adminView').classList.contains('hidden')) renderAdmin('products'); toast('Connected to online catalogue'); } }
+function saveLocalOnly(){localStorage.setItem("fe_products_v2",JSON.stringify(products));localStorage.setItem("fe_categories_v2",JSON.stringify(categories));localStorage.setItem("fe_cart_v2",JSON.stringify(cart));localStorage.setItem("fe_wish_v2",JSON.stringify(wish));localStorage.setItem("fe_orders_v2",JSON.stringify(orders));counts()}
+const seed=[
+{id:1,name:"Luxury Classic Handbag",category:"Handbags",price:8500,compare:10000,stock:7,rating:4.9,sales:190,badge:"BEST SELLER",colors:["Black","Coffee","Wine"],sizes:[],description:"A timeless structured handbag designed for effortless everyday elegance.",images:["https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=900&q=85"]},
+{id:2,name:"Premium Structured Handbag",category:"Handbags",price:9500,compare:12000,stock:4,rating:4.8,sales:155,badge:"SALE",colors:["Black","Brown"],sizes:[],description:"Polished structure, practical space and a refined silhouette.",images:["https://images.unsplash.com/photo-1594223274512-ad4803739b7c?auto=format&fit=crop&w=900&q=85"]},
+{id:3,name:"Elegant Mini Shoulder Bag",category:"Handbags",price:7500,compare:0,stock:12,rating:4.7,sales:126,badge:"NEW",colors:["Pink","Black"],sizes:[],description:"A compact statement piece for brunches, evenings and special occasions.",images:["https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?auto=format&fit=crop&w=900&q=85"]},
+{id:4,name:"Classic Women's Shoe",category:"Shoes",price:22000,compare:26000,stock:9,rating:4.8,sales:98,badge:"SALE",colors:["Black","Nude"],sizes:["38","39","40","41"],description:"Comfortable, elegant footwear for polished everyday looks.",images:["https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=900&q=85"]},
+{id:5,name:"Elegant Women's Abaya",category:"Abayas",price:28000,compare:0,stock:6,rating:4.9,sales:74,badge:"NEW",colors:["Black","Mocha"],sizes:["M","L","XL"],description:"A graceful flowing abaya with a clean modern finish.",images:["https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=900&q=85"]},
+{id:6,name:"Satin Occasion Gown",category:"Clothing",price:35000,compare:42000,stock:5,rating:4.7,sales:62,badge:"SALE",colors:["Wine","Emerald"],sizes:["S","M","L"],description:"A sophisticated silhouette made for memorable occasions.",images:["https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=900&q=85"]},
+{id:7,name:"Minimalist Crossbody",category:"Accessories",price:15500,compare:0,stock:15,rating:4.6,sales:53,badge:"NEW",colors:["Cream","Black"],sizes:[],description:"Lightweight and versatile with a clean minimalist profile.",images:["https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=900&q=85"]},
+{id:8,name:"Pearl Evening Clutch",category:"Accessories",price:19000,compare:23000,stock:3,rating:4.8,sales:49,badge:"LIMITED",colors:["Gold","Silver"],sizes:[],description:"An elegant evening clutch that adds a refined finishing touch.",images:["https://images.unsplash.com/photo-1594223274512-ad4803739b7c?auto=format&fit=crop&w=900&q=85"]}
+];
+const catImages={
+Handbags:"https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=600&q=80",
+Shoes:"https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=600&q=80",
+Abayas:"https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=600&q=80",
+Clothing:"https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=600&q=80",
+Accessories:"https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=600&q=80"
+};
+let products=JSON.parse(localStorage.getItem("fe_products_v2")||"null")||seed;
+let categories=JSON.parse(localStorage.getItem("fe_categories_v2")||"null")||Object.keys(catImages).map((name,i)=>({id:i+1,name,image:catImages[name],active:true}));
+let cart=JSON.parse(localStorage.getItem("fe_cart_v2")||"[]");
+let wish=JSON.parse(localStorage.getItem("fe_wish_v2")||"[]");
+let orders=JSON.parse(localStorage.getItem("fe_orders_v2")||"[]");
+
+const $=s=>document.querySelector(s), $$=s=>document.querySelectorAll(s);
+const money=n=>"₦"+Number(n||0).toLocaleString("en-NG");
+function save(){saveLocalOnly()}
+function counts(){$("#cartCount").textContent=cart.reduce((a,x)=>a+x.qty,0);$("#wishCount").textContent=wish.length}
+function toast(t){const x=$("#toast");x.textContent=t;x.classList.add("show");setTimeout(()=>x.classList.remove("show"),2200)}
+function showStore(){$("#adminView").classList.add("hidden");$("#storeView").classList.remove("hidden");renderStore();window.scrollTo(0,0)}
+async function showAdmin(){
+  closeModal();
+  if(!sb){return showAdminLogin("Supabase is not configured.");}
+  const {data:{session}}=await sb.auth.getSession();
+  if(!session){return showAdminLogin();}
+  const {data:profile,error}=await sb.from("profiles").select("role,full_name,email").eq("id",session.user.id).single();
+  if(error || profile?.role !== "admin"){
+    return showAdminLogin("This account does not have administrator access.");
+  }
+  currentUser={...session.user,profile};
+  closeModal();$("#storeView").classList.add("hidden");$("#adminView").classList.remove("hidden");
+  $(".admin-profile").textContent=(profile.full_name||profile.email||"Admin")+" · Sign out";
+  renderAdmin("overview");
+}
+function showAdminLogin(message=""){
+  openModal(`<button class="circle close-modal" onclick="closeModal()">×</button><span class="kicker">FAHMAD EMPIRE</span><h2 style="font:600 34px 'Playfair Display'">Admin sign in</h2><p class="muted">${message||"Sign in with your Fahmad Empire administrator account."}</p><form id="adminLoginForm" onsubmit="adminLogin(event)"><div class="field"><label>Email</label><input required type="email" name="email" autocomplete="username"></div><div class="field"><label>Password</label><input required type="password" name="password" autocomplete="current-password"></div><button class="btn gold full">Sign in to admin</button></form>`);
+}
+async function adminLogin(e){
+  e.preventDefault();
+  const f=new FormData(e.target);
+  const {error}=await sb.auth.signInWithPassword({email:f.get("email"),password:f.get("password")});
+  if(error){toast(error.message);return;}
+  const {data:{user}}=await sb.auth.getUser();
+  const {data:profile}=await sb.from("profiles").select("role,full_name,email").eq("id",user.id).single();
+  if(profile?.role!=="admin"){
+    await sb.auth.signOut();
+    showAdminLogin("This account is not an administrator.");
+    return;
+  }
+  currentUser={...user,profile};
+  closeModal();$("#storeView").classList.add("hidden");$("#adminView").classList.remove("hidden");
+  $(".admin-profile").textContent=(profile.full_name||profile.email||"Admin")+" · Sign out";
+  renderAdmin("overview");
+  await refreshFromBackend();
+  toast("Welcome to Fahmad Empire Admin");
+}
+async function adminSignOut(){if(sb)await sb.auth.signOut();currentUser=null;$("#adminView").classList.add("hidden");$("#storeView").classList.remove("hidden");toast("Signed out");}
+
+function renderCategories(){let active=categories.filter(c=>c.active);$("#categoryGrid").innerHTML=active.map(c=>`<a class="cat" href="#shop" onclick="setCat('${c.name}')"><img src="${c.image}" alt="${c.name}"><strong>${c.name}</strong></a>`).join("");$("#catFilter").innerHTML='<option value="">All categories</option>'+active.map(c=>`<option>${c.name}</option>`).join("")}
+function productCard(p){return `<article class="product"><div class="product-pic"><img loading="lazy" src="${p.images[0]}" alt="${p.name}">${p.badge?`<span class="badge ${p.badge==='SALE'?'gold':''}">${p.badge}</span>`:""}<div class="p-actions"><button onclick="toggleWish(${p.id})">${wish.includes(p.id)?"♥":"♡"}</button><button onclick="openProduct(${p.id})">⌕</button></div></div><div class="product-info"><h3>${p.name}</h3><div class="rating">★★★★★ <span>(${p.rating})</span></div><div class="price">${money(p.price)} ${p.compare?`<span class="old">${money(p.compare)}</span>`:""}</div><div class="stock">${p.stock<=5?"Only "+p.stock+" left":"In stock"}</div><button class="add" onclick="addCart(${p.id})">Add to cart</button></div></article>`}
+function filtered(){let q=$("#search").value.toLowerCase(),cat=$("#catFilter").value,sort=$("#sort").value;let a=products.filter(p=>(!q||(p.name+" "+p.category+" "+p.description).toLowerCase().includes(q))&&(!cat||p.category===cat));if(sort==="low")a.sort((a,b)=>a.price-b.price);if(sort==="high")a.sort((a,b)=>b.price-a.price);if(sort==="popular")a.sort((a,b)=>b.sales-a.sales);if(sort==="rating")a.sort((a,b)=>b.rating-a.rating);return a}
+function renderStore(){renderCategories();let a=filtered();$("#productGrid").innerHTML=a.length?a.map(productCard).join(""):'<div class="empty" style="grid-column:1/-1">No products found.</div>';$("#resultCount").textContent=a.length+" products";$("#newGrid").innerHTML=products.filter(p=>p.badge==="NEW").map(productCard).join("");$("#bestGrid").innerHTML=[...products].sort((a,b)=>b.sales-a.sales).slice(0,4).map(productCard).join("");counts()}
+function setCat(c){$("#catFilter").value=c;renderStore();location.hash="shop"}
+function focusSearch(){location.hash="shop";setTimeout(()=>$("#search").focus(),200)}
+function addCart(id){let p=products.find(x=>x.id===id),i=cart.find(x=>x.id===id);if(!i)cart.push({id,qty:1});else if(i.qty<p.stock)i.qty++;else return toast("Maximum stock reached");save();toast("Added to cart");openCart()}
+function toggleWish(id){wish.includes(id)?wish=wish.filter(x=>x!==id):wish.push(id);save();renderStore();toast(wish.includes(id)?"Added to wishlist":"Removed from wishlist")}
+function openProduct(id){let p=products.find(x=>x.id===id);$("#modal").innerHTML=`<button class="circle close-modal" onclick="closeModal()">×</button><div class="product-modal"><img src="${p.images[0]}" alt="${p.name}"><div><span class="kicker">${p.category.toUpperCase()}</span><h2>${p.name}</h2><div class="rating">★★★★★ ${p.rating}</div><div class="price" style="font-size:23px">${money(p.price)} ${p.compare?`<span class="old">${money(p.compare)}</span>`:""}</div><p>${p.description}</p><b>Colours</b><div class="options">${(p.colors||[]).map((c,i)=>`<button class="option ${i===0?"active":""}" onclick="pickOption(this)">${c}</button>`).join("")}</div>${p.sizes?.length?`<b>Sizes</b><div class="options">${p.sizes.map((c,i)=>`<button class="option ${i===0?"active":""}" onclick="pickOption(this)">${c}</button>`).join("")}</div>`:""}<p class="stock">${p.stock<=5?"Only "+p.stock+" left":"In stock"} • Delivery across Nigeria</p><button class="btn gold full" onclick="addCart(${p.id});closeModal()">Add to cart</button><button class="btn ghost full" onclick="addCart(${p.id});closeModal();openCart()">Buy now</button></div></div>`;$("#modalWrap").classList.add("show")}
+function pickOption(e){e.parentElement.querySelectorAll(".option").forEach(x=>x.classList.remove("active"));e.classList.add("active")}
+function closeModal(){$("#modalWrap").classList.remove("show")}
+function openDrawer(title,html){$("#drawerTitle").textContent=title;$("#drawerBody").innerHTML=html;$("#drawer").classList.add("open");$("#overlay").classList.add("show")}
+function closeDrawer(){$("#drawer").classList.remove("open");$("#overlay").classList.remove("show")}
+function openCart(){if(!cart.length)return openDrawer("Your cart",'<div class="empty"><h3>Your cart is empty</h3><p>Discover something beautiful for your next look.</p></div>');let sub=cart.reduce((a,i)=>a+products.find(p=>p.id===i.id).price*i.qty,0);openDrawer("Your cart",`${cart.map(i=>{let p=products.find(x=>x.id===i.id);return `<div class="cart-row"><img src="${p.images[0]}"><div><b>${p.name}</b><div>${money(p.price)}</div><div class="qty"><button onclick="qty(${p.id},-1)">−</button><span>${i.qty}</span><button onclick="qty(${p.id},1)">+</button></div></div><button class="circle" onclick="removeCart(${p.id})">×</button></div>`}).join("")}<div class="drawer-total"><div class="line"><span>Subtotal</span><b>${money(sub)}</b></div><div class="line"><span>Delivery</span><b>Calculated at checkout</b></div><div class="line final"><span>Total</span><b>${money(sub)}</b></div><button class="btn gold full" onclick="checkout()">Proceed to checkout</button></div>`)}
+function qty(id,d){let i=cart.find(x=>x.id===id),p=products.find(x=>x.id===id);i.qty+=d;if(i.qty<=0)cart=cart.filter(x=>x.id!==id);if(i.qty>p.stock)i.qty=p.stock;save();openCart()}
+function removeCart(id){cart=cart.filter(x=>x.id!==id);save();openCart()}
+function openWishlist(){let a=products.filter(p=>wish.includes(p.id));openDrawer("Wishlist",a.length?`<div class="products" style="grid-template-columns:1fr 1fr">${a.map(productCard).join("")}</div>`:'<div class="empty"><h3>Your wishlist is empty</h3><p>Save products you love for later.</p></div>')}
+function checkout(){let sub=cart.reduce((a,i)=>a+products.find(p=>p.id===i.id).price*i.qty,0);openDrawer("Checkout",`<form onsubmit="placeOrder(event)"><div class="kicker">DELIVERY DETAILS</div><h3>Where should we deliver?</h3><div class="field"><label>Full name</label><input required name="name"></div><div class="field"><label>Email</label><input required type="email" name="email"></div><div class="field"><label>Phone</label><input required name="phone" placeholder="+234..."></div><div class="field"><label>State</label><select required name="state"><option value="">Select state</option>${["Abia","Adamawa","Akwa Ibom","Anambra","Bauchi","Bayelsa","Benue","Borno","Cross River","Delta","Ebonyi","Edo","Ekiti","Enugu","FCT Abuja","Gombe","Imo","Jigawa","Kaduna","Kano","Katsina","Kebbi","Kogi","Kwara","Lagos","Nasarawa","Niger","Ogun","Ondo","Osun","Oyo","Plateau","Rivers","Sokoto","Taraba","Yobe","Zamfara"].map(s=>`<option>${s}</option>`).join("")}</select></div><div class="field"><label>Delivery address</label><textarea required name="address"></textarea></div><div class="field"><label>Delivery method</label><select name="delivery"><option value="1500">Standard — ₦1,500</option><option value="3000">Express — ₦3,000</option><option value="0">Pickup — Free</option></select></div><div class="line final"><span>Estimated total</span><b>${money(sub+1500)}</b></div><p class="muted">Demo checkout. Live Paystack/Flutterwave integration is the next backend step.</p><button class="btn gold full">Place order</button></form>`)}
+function placeOrder(e){e.preventDefault();let f=new FormData(e.target),delivery=+f.get("delivery"),sub=cart.reduce((a,i)=>a+products.find(p=>p.id===i.id).price*i.qty,0);let o={id:"FE-"+Date.now().toString().slice(-8),date:new Date().toLocaleDateString("en-NG"),items:[...cart],subtotal:sub,delivery,total:sub+delivery,status:"Processing",payment:"Demo",customer:{name:f.get("name"),email:f.get("email"),phone:f.get("phone"),state:f.get("state"),address:f.get("address")}};orders.unshift(o);cart=[];save();openDrawer("Order confirmed",`<div class="empty"><div style="font-size:45px">✓</div><h2>Thank you, ${o.customer.name.split(" ")[0]}!</h2><p>Order <b>${o.id}</b> has been created.</p><p>Total: <b>${money(o.total)}</b></p><button class="btn gold full" onclick="openAccount()">View my orders</button></div>`)}
+function openAccount(){let total=orders.reduce((a,o)=>a+o.total,0);openModal(`<button class="circle close-modal" onclick="closeModal()">×</button><span class="kicker">MY ACCOUNT</span><h2 style="font:600 38px 'Playfair Display'">Welcome back</h2><div class="admin-cards"><div class="admin-card"><span class="label">ORDERS</span><strong>${orders.length}</strong></div><div class="admin-card"><span class="label">WISHLIST</span><strong>${wish.length}</strong></div><div class="admin-card"><span class="label">ACTIVE</span><strong>${orders.filter(o=>o.status!=="Delivered").length}</strong></div><div class="admin-card"><span class="label">SPEND</span><strong>${money(total)}</strong></div></div><div class="admin-panel"><h3>Recent orders</h3>${orders.length?orders.slice(0,5).map(o=>`<div class="cart-row"><div><b>${o.id}</b><div class="muted">${o.date} • ${o.status}</div></div><strong>${money(o.total)}</strong></div>`).join(""):'<div class="empty">No orders yet.</div>'}</div>`)}
+function openModal(html){$("#modal").innerHTML=html;$("#modalWrap").classList.add("show")}
+$("#search").addEventListener("input",renderStore);$("#catFilter").addEventListener("change",renderStore);$("#sort").addEventListener("change",renderStore);$("#overlay").onclick=closeDrawer;$("#modalWrap").onclick=e=>{if(e.target.id==="modalWrap")closeModal()};$("#newsletter").onsubmit=e=>{e.preventDefault();toast("Welcome to the list ✦");e.target.reset()};function closeMobileNav(){const n=$("#siteNav");n.classList.remove("mobile-open");}
+$("#mobileMenu").onclick=()=>{const n=$("#siteNav");n.classList.toggle("mobile-open")};
+
+function renderAdmin(tab){
+ $$(".admin-menu button").forEach(b=>b.classList.toggle("active",b.dataset.tab===tab));
+ const titles={overview:"Dashboard",products:"Products",orders:"Orders",customers:"Customers",categories:"Categories",promotions:"Promotions",reviews:"Reviews",settings:"Settings"};$("#adminTitle").textContent=titles[tab];
+ if(tab==="overview")adminOverview();if(tab==="products")adminProducts();if(tab==="orders")adminOrders();if(tab==="customers")adminCustomers();if(tab==="categories")adminCategories();if(tab==="promotions")adminPromotions();if(tab==="reviews")adminReviews();if(tab==="settings")adminSettings();
+}
+function adminOverview(){let sales=orders.reduce((a,o)=>a+o.total,0),low=products.filter(p=>p.stock<=5).length;$("#adminContent").innerHTML=`<div class="admin-cards"><div class="admin-card"><span class="label">TOTAL SALES</span><strong>${money(sales)}</strong><em>All recorded orders</em></div><div class="admin-card"><span class="label">ORDERS</span><strong>${orders.length}</strong><em>Customer orders</em></div><div class="admin-card"><span class="label">PRODUCTS</span><strong>${products.length}</strong><em>Published catalogue</em></div><div class="admin-card"><span class="label">LOW STOCK</span><strong>${low}</strong><em>${low?"Needs attention":"All healthy"}</em></div></div><div class="admin-panel"><div class="admin-panel-head"><h3>Sales overview</h3><span class="muted">Last 7 periods</span></div><div class="mini-chart">${[35,58,44,72,62,88,100].map(v=>`<div class="bar" style="height:${v}%"></div>`).join("")}</div><div class="chart-labels"><span>Sat</span><span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span></div></div><div class="admin-panel"><div class="admin-panel-head"><h3>Recent orders</h3><button class="primary" onclick="renderAdmin('orders')">View all</button></div>${orders.length?orders.slice(0,5).map(o=>`<div class="cart-row"><div><b>${o.id}</b><div class="muted">${o.customer.name} • ${o.date}</div></div><strong>${money(o.total)}</strong></div>`).join(""):'<div class="admin-empty">No orders yet. Orders will appear here after customers check out.</div>'}</div>`}
+function adminProducts(){ $("#adminContent").innerHTML=`<div class="admin-panel"><div class="admin-panel-head"><h3>Product catalogue</h3><button class="primary" onclick="openProductForm()">+ Add product</button></div><div class="table-wrap"><table class="admin-table"><thead><tr><th>Product</th><th>Category</th><th>Price</th><th>Stock</th><th>Status</th><th>Actions</th></tr></thead><tbody>${products.map(p=>`<tr><td><img class="thumb" src="${p.images[0]}">${p.name}</td><td>${p.category}</td><td>${money(p.price)}</td><td>${p.stock}</td><td><span class="status ${p.stock<=5?'warn':''}">${p.stock?'Published':'Out of stock'}</span></td><td class="admin-actions"><button onclick="openProductForm(${p.id})">Edit</button><button onclick="deleteProduct(${p.id})">Delete</button></td></tr>`).join("")}</tbody></table></div></div>`}
+function openProductForm(id=null){let p=id?products.find(x=>x.id===id):{name:"",category:categories[0]?.name||"Handbags",price:"",compare:"",stock:"",rating:"5",sales:"0",badge:"",colors:["Black"],sizes:[],description:"",images:[]};openModal(`<button class="circle close-modal" onclick="closeModal()">×</button><span class="kicker">CATALOGUE</span><h2 style="font:600 34px 'Playfair Display'">${id?"Edit product":"Add a new product"}</h2><form id="productForm" onsubmit="saveProduct(event,${id||0})"><div class="product-editor"><div><div class="upload-box"><input id="imageInput" type="file" accept="image/*" multiple><p class="muted">Upload product images. They will be stored in this browser for this demo.</p><div class="preview-grid" id="previews"></div></div><div class="field"><label>Product name</label><input required name="name" value="${esc(p.name)}"></div><div class="field"><label>Description</label><textarea required name="description">${esc(p.description)}</textarea></div></div><div><div class="form-grid"><div class="field"><label>Category</label><select name="category">${categories.map(c=>`<option ${c.name===p.category?"selected":""}>${c.name}</option>`).join("")}</select></div><div class="field"><label>Price (₦)</label><input required type="number" name="price" value="${p.price}"></div><div class="field"><label>Previous price</label><input type="number" name="compare" value="${p.compare||""}"></div><div class="field"><label>Stock</label><input required type="number" name="stock" value="${p.stock}"></div><div class="field"><label>Badge</label><select name="badge"><option value="">None</option>${["NEW","BEST SELLER","SALE","LIMITED"].map(x=>`<option ${p.badge===x?"selected":""}>${x}</option>`).join("")}</select></div><div class="field"><label>Rating</label><input type="number" step=".1" min="0" max="5" name="rating" value="${p.rating||5}"></div><div class="field form-full"><label>Colours (comma separated)</label><input name="colors" value="${(p.colors||[]).join(", ")}"></div><div class="field form-full"><label>Sizes (comma separated)</label><input name="sizes" value="${(p.sizes||[]).join(", ")}"></div></div><div class="checkboxes"><label><input type="checkbox" name="featured"> Featured</label><label><input type="checkbox" name="new" ${p.badge==="NEW"?"checked":""}> New arrival</label><label><input type="checkbox" name="best" ${p.badge==="BEST SELLER"?"checked":""}> Best seller</label></div></div></div><button class="btn gold full">${id?"Save changes":"Publish product"}</button></form>`);
+ const old=p.images?.[0];if(old)$("#previews").innerHTML=`<img src="${old}">`;$("#imageInput").onchange=e=>{let arr=[...e.target.files];$("#previews").innerHTML=arr.map(f=>`<img src="${URL.createObjectURL(f)}">`).join("")};}
+function esc(s){return String(s??"").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll('"',"&quot;")}
+async function persistProductToBackend(p, id){
+  if(!sb || !backendOnline) return true;
+  const category = categories.find(c=>c.name===p.category);
+  const payload={name:p.name,slug:slugify(p.name)+"-"+Date.now(),description:p.description,price:p.price,compare_at_price:p.compare||null,stock_quantity:p.stock,low_stock_threshold:5,rating:p.rating||0,review_count:0,is_active:true,is_featured:p.featured||false,is_new_arrival:p.badge==='NEW',is_best_seller:p.badge==='BEST SELLER',specifications:{colors:p.colors||[],sizes:p.sizes||[]},category_id:category?.id||null};
+  let productId=id;
+  if(id){ const {error}=await sb.from('products').update(payload).eq('id',id); if(error) throw error; }
+  else { const {data,error}=await sb.from('products').insert(payload).select('id').single(); if(error) throw error; productId=data.id; }
+  // Upload selected images to the public product-images bucket when available.
+  if(p.files?.length){
+    for(let i=0;i<p.files.length;i++){
+      const file=p.files[i], path=`${productId}/${Date.now()}-${i}-${slugify(file.name)}`;
+      const up=await sb.storage.from('product-images').upload(path,file,{upsert:false,contentType:file.type});
+      if(up.error) throw up.error;
+      const pub=sb.storage.from('product-images').getPublicUrl(path).data.publicUrl;
+      await sb.from('product_images').insert({product_id:productId,image_url:pub,sort_order:i,is_primary:i===0});
+    }
+  }
+  return true;
+}
+async function saveProduct(e,id){e.preventDefault();let f=new FormData(e.target),existing=id?products.find(x=>x.id===id):null;let files=[...$("#imageInput").files];let finish=async(imgs)=>{let p={id:id||Date.now(),name:f.get("name"),category:f.get("category"),price:+f.get("price"),compare:+f.get("compare")||0,stock:+f.get("stock"),rating:+f.get("rating")||5,sales:existing?.sales||0,badge:f.get("badge"),colors:f.get("colors").split(",").map(x=>x.trim()).filter(Boolean),sizes:f.get("sizes").split(",").map(x=>x.trim()).filter(Boolean),description:f.get("description"),images:imgs.length?imgs:(existing?.images?.length?existing.images:["https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=900&q=85"]),files};
+  try{await persistProductToBackend(p,id||null); if(id)products=products.map(x=>x.id===id?p:x);else products.unshift(p);save();closeModal();renderAdmin("products");renderStore();toast(backendOnline?(id?"Product updated online":"Product published online"):(id?"Product updated locally":"Product published locally"));}catch(err){console.error(err);toast("Could not save online. Check Supabase policies/storage.");}}
+  if(!files.length)return finish(existing?.images||[]); Promise.all(files.map(file=>new Promise(res=>{let r=new FileReader;r.onload=()=>res(r.result);r.readAsDataURL(file)}))).then(finish)}
+async function deleteProduct(id){
+  if(!confirm("Delete this product?"))return;
+  try{
+    if(sb && backendOnline && typeof id === "string"){
+      const {error}=await sb.from("products").update({is_active:false}).eq("id",id);
+      if(error)throw error;
+    }
+    products=products.filter(p=>p.id!==id);save();renderAdmin("products");renderStore();toast("Product removed");
+  }catch(err){console.error(err);toast("Could not remove product online.");}
+}
+function adminOrders(){if(!orders.length){$("#adminContent").innerHTML='<div class="admin-panel admin-empty">No customer orders yet.</div>';return}$("#adminContent").innerHTML=`<div class="admin-panel"><div class="admin-panel-head"><h3>Orders</h3><span class="muted">${orders.length} total</span></div><div class="table-wrap"><table class="admin-table"><thead><tr><th>Order</th><th>Customer</th><th>Date</th><th>Total</th><th>Status</th><th>Update</th></tr></thead><tbody>${orders.map(o=>`<tr><td><b>${o.id}</b></td><td>${o.customer.name}</td><td>${o.date}</td><td>${money(o.total)}</td><td><span class="status">${o.status}</span></td><td><select onchange="updateOrder('${o.id}',this.value)">${["Pending","Confirmed","Processing","Shipped","Out for Delivery","Delivered","Cancelled"].map(s=>`<option ${o.status===s?"selected":""}>${s}</option>`).join("")}</select></td></tr>`).join("")}</tbody></table></div></div>`}
+function updateOrder(id,status){orders=orders.map(o=>o.id===id?{...o,status}:o);save();renderAdmin("orders");toast("Order updated")}
+function adminCustomers(){$("#adminContent").innerHTML=`<div class="admin-panel"><div class="admin-panel-head"><h3>Customers</h3></div><div class="admin-empty">Customer profiles will populate automatically as real accounts are connected to the backend. Current demo orders: <b>${new Set(orders.map(o=>o.customer.email)).size}</b>.</div></div>`}
+function adminCategories(){$("#adminContent").innerHTML=`<div class="admin-panel"><div class="admin-panel-head"><h3>Categories</h3><button class="primary" onclick="addCategory()">+ Add category</button></div><div class="cat-admin">${categories.map(c=>`<article><img src="${c.image}"><b>${c.name}</b><p class="muted">${c.active?"Visible in store":"Hidden"}</p><button class="admin-actions" onclick="toggleCategory(${c.id})">Toggle</button><button class="admin-actions" onclick="deleteCategory(${c.id})">Delete</button></article>`).join("")}</div></div>`}
+function addCategory(){let name=prompt("Category name?");if(!name)return;categories.push({id:Date.now(),name,image:catImages[name]||catImages.Handbags,active:true});save();renderAdmin("categories");toast("Category added")}
+function toggleCategory(id){categories=categories.map(c=>c.id===id?{...c,active:!c.active}:c);save();renderAdmin("categories")}
+function deleteCategory(id){let c=categories.find(x=>x.id===id);if(confirm("Delete "+c.name+"?")){categories=categories.filter(x=>x.id!==id);save();renderAdmin("categories")}}
+function adminPromotions(){$("#adminContent").innerHTML=`<div class="admin-panel"><div class="admin-panel-head"><h3>Promotions</h3><button class="primary" onclick="prompt('Promotion name?')">+ Create promotion</button></div><div class="admin-empty">Create discount campaigns, coupon codes, flash sales and homepage banners here. This UI is ready for the production backend.</div></div>`}
+function adminReviews(){$("#adminContent").innerHTML=`<div class="admin-panel"><div class="admin-panel-head"><h3>Reviews</h3></div><div class="admin-empty">No pending reviews in this demo. Production reviews will be linked to verified customer orders.</div></div>`}
+function adminSettings(){$("#adminContent").innerHTML=`<div class="admin-panel"><div class="admin-panel-head"><h3>Store settings</h3><button class="primary" onclick="toast('Settings saved')">Save changes</button></div>${["Brand name — Fahmad Empire","Currency — Nigerian Naira (₦)","Delivery — Configure by state/zone","Payment — Paystack / Flutterwave","Contact — hello@fahmadempire.com","Policies — Shipping, Returns, Privacy, Terms"].map(x=>`<div class="setting-row"><span>${x}</span><span>›</span></div>`).join("")}</div>`}
+$$(".admin-menu button").forEach(b=>b.onclick=()=>renderAdmin(b.dataset.tab));
+$(".admin-profile").onclick=adminSignOut;
+
+renderStore();counts();loadBackend().then(()=>renderStore());
+window.showAdmin=showAdmin;window.showStore=showStore;window.renderAdmin=renderAdmin;window.openProductForm=openProductForm;window.deleteProduct=deleteProduct;window.updateOrder=updateOrder;window.addCategory=addCategory;window.toggleCategory=toggleCategory;window.deleteCategory=deleteCategory;window.openCart=openCart;window.closeDrawer=closeDrawer;window.openWishlist=openWishlist;window.openAccount=openAccount;window.openProduct=openProduct;window.closeModal=closeModal;window.addCart=addCart;window.toggleWish=toggleWish;window.qty=qty;window.removeCart=removeCart;window.checkout=checkout;window.placeOrder=placeOrder;window.pickOption=pickOption;window.focusSearch=focusSearch;window.setCat=setCat;
+
+document.addEventListener("keydown",e=>{if(e.ctrlKey&&e.shiftKey&&e.key.toLowerCase()==="a")showAdmin()});
+if(sb){
+  sb.auth.onAuthStateChange((_event,session)=>{ currentUser=session?.user||null; });
+}
+
+</script>
+</body>
+</html>
