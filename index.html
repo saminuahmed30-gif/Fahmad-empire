@@ -401,8 +401,9 @@ function openAccount() {
     </div>
   `;
 
-  modalWrap.classList.add("show");
-
+  modalWrap.style.display = "flex";
+modalWrap.style.visibility = "visible";
+modalWrap.style.opacity = "1";
   document.getElementById("customerLoginForm")
     .addEventListener("submit", customerLogin);
 }
@@ -411,7 +412,7 @@ function closeCustomerAuth() {
   const modalWrap = document.getElementById("modalWrap");
 
   if (modalWrap) {
-    modalWrap.classList.remove("show");
+    modalWrap.classList.remove("none");
   }
 }
 
