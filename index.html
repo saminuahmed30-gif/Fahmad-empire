@@ -432,7 +432,104 @@ function showCustomerRegister() {
 function showForgotPassword() {
   alert("Password recovery will be added next.");
 }
-</script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+const SUPABASE_URL = "https://suufewlslzwddzkljzey.supabase.co";
+const SUPABASE_KEY = "sb_publishable_kqnY6idmB06xVml2pFfh2g_1rkxYPwQ";
+
+const supabaseClient = window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_KEY
+);
+
+function closeCustomerAuth() {
+  const modalWrap = document.getElementById("modalWrap");
+
+  if (modalWrap) {
+    modalWrap.style.display = "none";
+  }
+}
+
+async function customerLogin(event) {
+  event.preventDefault();
+
+  const email = document.getElementById("customerEmail").value.trim();
+  const password = document.getElementById("customerPassword").value;
+
+  if (!email || !password) {
+    alert("Please enter your email and password.");
+    return;
+  }
+
+  const { data, error } = await supabaseClient.auth.signInWithPassword({
+    email: email,
+    password: password
+  });
+
+  if (error) {
+    alert("Login failed: " + error.message);
+    return;
+  }
+
+  alert("Welcome back! 🎉 You are now signed in.");
+  closeCustomerAuth();
+
+  console.log("Customer signed in:", data.user.email);
+}
+
+async function showCustomerRegister() {
+  const email = prompt("Enter your email address:");
+
+  if (!email) return;
+
+  const password = prompt("Create a password (at least 6 characters):");
+
+  if (!password) return;
+
+  if (password.length < 6) {
+    alert("Your password must be at least 6 characters.");
+    return;
+  }
+
+  const { data, error } = await supabaseClient.auth.signUp({
+    email: email.trim(),
+    password: password
+  });
+
+  if (error) {
+    alert("Registration failed: " + error.message);
+    return;
+  }
+
+  if (data.user) {
+    alert(
+      "Account created successfully! 🎉\n\n" +
+      "Check your email if Supabase asks you to confirm your account."
+    );
+  }
+}
+
+async function showForgotPassword() {
+  const email = prompt("Enter your account email:");
+
+  if (!email) return;
+
+  const { error } = await supabaseClient.auth.resetPasswordForEmail(
+    email.trim(),
+    {
+      redirectTo: window.location.origin
+    }
+  );
+
+  if (error) {
+    alert("Password reset failed: " + error.message);
+    return;
+  }
+
+  alert("Password reset instructions have been sent to your email. 📧");
+}
+</script></
 
 </body>
 </html>
